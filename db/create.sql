@@ -7,19 +7,32 @@ CREATE TABLE products (
   code VARCHAR(15),
   name VARCHAR(255),
   description TEXT,
-  price NUMERIC(10, 2)
+  price NUMERIC(10, 2),
   category numeric(0, 255)
-  
 );
 
 CREATE TABLE categories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(255),
+  price NUMERIC(10, 2)
+);
+
+CREATE TABLE review (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(255),
+  amount_stars NUMERIC(10, 2),
+  description TEXT
+);
+
+CREATE TABLE company (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR(255)
 );
 
--- review ?
--- merk ?
--- 
+CREATE TABLE size_chart (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(255)
+);
 
 
 --
@@ -54,3 +67,27 @@ insert into categories (name) values ('Clock');
 insert into categories (name) values ('Non-WCA');
 insert into categories (name) values ('Accessoires');
 insert into categories (name) values ('Merchandise');
+
+-- TABLE review
+insert into review (name, amount_stars, description) values ('1star');
+insert into review (name, amount_stars, description) values ('2star');
+insert into review (name, amount_stars, description) values ('3star');
+insert into review (name, amount_stars, description) values ('4star');
+insert into review (name, amount_stars, description) values ('5star');
+
+-- TABLE company
+insert into company (name) values ('GAN');
+insert into company (name) values ('MoYu');
+insert into company (name) values ('YJ');
+insert into company (name) values ('Shengshou');
+insert into company (name) values ('QiYi');
+insert into company (name) values ('Yuxin');
+
+-- TABLE size_chart
+insert into size_chart (name) values ('XS');
+insert into size_chart (name) values ('S');
+insert into size_chart (name) values ('M');
+insert into size_chart (name) values ('L');
+insert into size_chart (name) values ('XL');
+insert into size_chart (name) values ('2XL');
+insert into size_chart (name) values ('3XL');
