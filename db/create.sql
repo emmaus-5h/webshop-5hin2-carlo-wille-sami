@@ -4,7 +4,6 @@
 
 CREATE TABLE products (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  code VARCHAR(15),
   name VARCHAR(255),
   description TEXT,
   price NUMERIC(10, 2),
@@ -45,12 +44,50 @@ CREATE TABLE size_chart (
 --
 
 -- TABLE products
-insert into products (name, description, code, price) values ('GAN 13', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id.', '816905633-0', 10.5);
-insert into products (name, description, code, price) values ('Post Mortem', 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', '077030122-3', 11);
-insert into products (name, description, code, price) values ('Scarlet and the Black, The', 'Pellentesque at nulla. Suspendisse potenti.', '445924201-X', 13.5);
-insert into products (name, description, code, price) values ('Aquí llega Condemor, el pecador de la pradera', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', '693155505-7', 13.5);
-insert into products (name, description, code, price) values ('Kiss for Corliss, A (Almost a Bride)', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '686928463-6', 14);
-insert into products (name, description, code, price) values ('Velvet Goldmine', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '492662523-7', 14);
+insert into products (name, description, price, categorie) values ('YJ MGC', '', 12, 1);
+insert into products (name, description, price, categorie) values ('YJ MGC2 ELITE', '',21 , 1);
+insert into products (name, description, price, categorie) values ('X-MAN FLARE', '', 16, 1);
+insert into products (name, description, price, categorie) values ('GAN 13 Maglev', 'Gloednieuwe Kubus', 84, 2);
+insert into products (name, description, price, categorie) values ('X-MAN TORNADO V3 M', '', 25, 2);
+insert into products (name, description, price, categorie) values ('MOYU RS3 M 2020', '', 9, 2);
+insert into products (name, description, price, categorie) values ('QIYI MS', '', 10, 2);
+insert into products (name, description, price, categorie) values ('DAYAN TENGYUN M', '', 26, 2);
+insert into products (name, description, price, categorie) values ('YJ MGC', '', 20, 3);
+insert into products (name, description, price, categorie) values ('MOYU AOSU WR M', '', 39, 3));
+insert into products (name, description, price, categorie) values ('MFJS MEILONG', '', 8, 3));
+insert into products (name, description, price, categorie) values ('YJ ZHILONG MINI', '', 14, 3));
+insert into products (name, description, price, categorie) values ('YJ MGC', '', 23, 4);
+insert into products (name, description, price, categorie) values ('MOYU AOCHUANG GST M', '', 40, 4);
+insert into products (name, description, price, categorie) values ('YJ ZHILONG MINI M', '', 17, 4);
+insert into products (name, description, price, categorie) values ('YG MGC', '', 26, 5);
+insert into products (name, description, price, categorie) values ('YUXIN LITTLE MAGIC', '', 14, 5);
+insert into products (name, description, price, categorie) values ('MFJS MEILONG', '', 14, 5);
+insert into products (name, description, price, categorie) values ('YJ MGC', '', 36, 6);
+insert into products (name, description, price, categorie) values ('SHENSHOU TANK', '', 17, 6);
+insert into products (name, description, price, categorie) values ('YJ YUHU', '', 14, 7);
+insert into products (name, description, price, categorie) values ('GAN MEGAMINX', '', 58, 7);
+insert into products (name, description, price, categorie) values ('QIYI MS PYRAMINX', '', 9, 8);
+insert into products (name, description, price, categorie) values ('GAN PYRAMINX M STANDARD', '', 19, 8);
+insert into products (name, description, price, categorie) values ('YJ MGC SQ-1', '', 21, 9);
+insert into products (name, description, price, categorie) values ('X-MAN VOLT SQUARE-1 V2 M UD', '', 21, 9);
+insert into products (name, description, price, categorie) values ('GAN SKEWB M ENHANCED', '', 32, 10);
+insert into products (name, description, price, categorie) values ('X-MAN WINGY MAGNETIC SKEWB V2', '', 23, 10);
+insert into products (name, description, price, categorie) values ('QIYI MAGNETIC CLOCK', '', 33, 11);
+insert into products (name, description, price, categorie) values ('SHENGSHOU MAGNETIC CLOCK', '', 11, 11);
+insert into products (name, description, price, categorie) values ('1X1 CUBE 19MM', '', 3, 12);
+insert into products (name, description, price, categorie) values ('1X1 PYRAMINX', '', 3, 12);
+insert into products (name, description, price, categorie) values ('MOYU 21X21', '', 1500, 12);
+insert into products (name, description, price, categorie) values ('YUXIN GIGAMINX', '', 40, 12);
+insert into products (name, description, price, categorie) values ('QIYI 2X2X3', '', 7, 12);
+insert into products (name, description, price, categorie) values ('QIYI GEAR 3X3', '', 8, 12);
+insert into products (name, description, price, categorie) values ('STACKMAT PRO TIMER GEN5', '', 33, 13);
+insert into products (name, description, price, categorie) values ('MAX COMMAND LUBE', '', 9, 13;
+insert into products (name, description, price, categorie) values ('CUBICLE LABS MYSTIC LUBE', '', 5, 13);
+insert into products (name, description, price, categorie) values ('3X3 CALENDAR STICKERS', '', 4, 13);
+insert into products (name, description, price, categorie) values ('BLINDFOLD', '', 2,5, 13);
+insert into products (name, description, price, categorie) values ('CUBICLE 2021 HOODIE', '', 40, 14);
+insert into products (name, description, price, categorie) values ('CUBICLE 2021 WIREFRAME T-SHIRT', '', 23, 14);
+insert into products (name, description, price, categorie) values ('QIYI BACKPACK', '', 60, 14);
 
 -- TABLE categories
 insert into categories (name) values ('2x2');
