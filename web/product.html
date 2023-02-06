@@ -86,10 +86,10 @@
                 clone.querySelector(".product_title").textContent += product.name
                 clone.querySelector(".product_description").textContent = product.description
                 clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
-                clone.querySelector(".product_code").textContent = product.code
+                clone.querySelector(".product_company").textContent = product.nameC
                 clone.querySelector(".product_id").value = product.id
                 clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
-                clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
+                clone.querySelector(".product_image").src =`/images/${product.id}.jpeg`
 
                 container.appendChild(clone)
             } else {
