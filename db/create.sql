@@ -8,7 +8,9 @@ CREATE TABLE products (
   description TEXT,
   price NUMERIC(10, 2),
   categorie numeric(0, 255),
-  company integer
+  company integer,
+  review integer,
+  maat integer
 );
 
 CREATE TABLE categories (
