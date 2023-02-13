@@ -19,9 +19,14 @@ CREATE TABLE categories (
   price NUMERIC(10, 2)
 );
 
-CREATE TABLE review (
+CREATE TABLE users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR(255),
+);
+  
+CREATE TABLE review (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  users.name.id VARCHAR(255),
   amount_stars NUMERIC(10, 2),
   description TEXT
 );

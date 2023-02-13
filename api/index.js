@@ -162,7 +162,7 @@ function checkoutOrder(request, response) {
   productIds = productIds || []
   if (!Array.isArray(productIds)) {
     productIds = [productIds]
-  }
+  }   
   productAmounts = productAmounts || []
   if (!Array.isArray(productAmounts)) {
     productAmounts = [productAmounts]
