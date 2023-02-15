@@ -15,20 +15,17 @@ CREATE TABLE products (
 
 CREATE TABLE categories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR(255),
+  nameCA VARCHAR(255),
   price NUMERIC(10, 2)
 );
 
-CREATE TABLE users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR(255),
-);
-  
 CREATE TABLE review (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  users.name.id VARCHAR(255),
+  nameR VARCHAR(255),
   amount_stars NUMERIC(10, 2),
-  description TEXT
+  description TEXT,
+  personen_id INTEGER,
+  product_id INTEGER
 );
 
 CREATE TABLE company (
@@ -41,7 +38,10 @@ CREATE TABLE size_chart (
   name VARCHAR(255)
 );
 
-
+CREATE TABLE personen (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(255)
+);
 --
 -- populate with data
 --
@@ -100,47 +100,47 @@ insert into products (name, description, price, categorie, company, review) valu
 insert into products (name, description, price, categorie, company, review) values ('QIYI BACKPACK', '', 60, 14, 5, 24);
 
 -- TABLE categories
-insert into categories (name) values ('2x2');
-insert into categories (name) values ('3x3');
-insert into categories (name) values ('4x4');
-insert into categories (name) values ('5x5');
-insert into categories (name) values ('6x6');
-insert into categories (name) values ('7x7');
-insert into categories (name) values ('Megaminx');
-insert into categories (name) values ('Pyraminx');
-insert into categories (name) values ('Square-1');
-insert into categories (name) values ('Skewb');
-insert into categories (name) values ('Clock');
-insert into categories (name) values ('Non-WCA');
-insert into categories (name) values ('Accessoires');
-insert into categories (name) values ('Merchandise');
+insert into categories (nameCA) values ('2x2');
+insert into categories (nameCA) values ('3x3');
+insert into categories (nameCA) values ('4x4');
+insert into categories (nameCA) values ('5x5');
+insert into categories (nameCA) values ('6x6');
+insert into categories (nameCA) values ('7x7');
+insert into categories (nameCA) values ('Megaminx');
+insert into categories (nameCA) values ('Pyraminx');
+insert into categories (nameCA) values ('Square-1');
+insert into categories (nameCA) values ('Skewb');
+insert into categories (nameCA) values ('Clock');
+insert into categories (nameCA) values ('Non-WCA');
+insert into categories (nameCA) values ('Accessoires');
+insert into categories (nameCA) values ('Merchandise');
 
 -- TABLE review
-insert into review (name, amount_stars, description) values ('Jacob R.', '4star', 'I recently got into cubing and thought it would be neat to have a 2x2, so i bought this one. overall it pretty good. turns very fast, but is a little bit sandy out of the box, butafter adding lube it is perfectly fine. definately worth the price');
-insert into review (name, amount_stars, description) values ('that o.k.', '5star', 'This cube came out of the both very rough and weird, but when I lubed it with speed lube, it turned into the smoothest thing ever. The corner cutting can be improved by loosening it, and the magnets are easily adjustable (although I think the factory settings are strong and good enough).');
-insert into review (name, amount_stars, description) values ('Anonymous ', '5star', 'this is the best cube I ever felt!!!!!!!!!!!!');
-insert into review (name, amount_stars, description) values ('Jude', '5star', 'Great cube as it satisfied my expectations. Very smooth, fast and quiet');
-insert into review (name, amount_stars, description) values ('Colin H.', '5star', 'The RS3M is a very good cube. for 9$, it can still pack a good tensioning system and magnets, although they are pretty weak. Corner cutting is also very good. It is slow turning, even on the lowest setting, but if you put a fast lube in (which I don’t have), it will probably be faster. Either than that, the cube is great.');
-insert into review (name, amount_stars, description) values ('Alexandra L.', '3star', 'Its ok, but not super good. too messy and also breaks too much');
-insert into review (name, amount_stars, description) values ('Kin W.', '5star', 'The cube was super small so I can hold it well. The speed was great and I put dingatas and gravitas in the outers. Then put some dnm and outers and inners so it was balanced. The cube allowed me to get amazing times');
-insert into review (name, amount_stars, description) values ('Julian O.', '4star', 'Amazing cube for the price great for beginners and veteran’s alike');
-insert into review (name, amount_stars, description) values ('Wyatt B.', '5star', 'Big fan of the AoSu WRM 4x4 so wanted to give this a try. By far the best 5x5 I have tried to date.');
-insert into review (name, amount_stars, description) values ('HChristopher', '3star', 'I know its a budget cube, but from the other reviews, I kind of expected a little more on the quality side... But... you will get what you pay for on this one. Its rough out of the box, and not much better after lube. But I guess its fine if you just want a cheap, screw-around kind of 5x5.');
-insert into review (name, amount_stars, description) values ('ME', '1star', 'IT HARD TO TURN IT ALMOST POP BAD CUBE');
-insert into review (name, amount_stars, description) values ('Patricia A.', '5star', 'Grandson was very pleased!');
-insert into review (name, amount_stars, description) values ('Hagop S.', '2star', 'this Megaminx sucks all around dont get it');
-insert into review (name, amount_stars, description) values ('Ryan Y.', '2star', 'Ive tightened it up all the way but is still feels flimsy and the magnets are no good either DONT BUY THIS GET ANYTHING ELSE');
-insert into review (name, amount_stars, description) values ('Big G.', '4star', 'It had a lot of catches out of the box and it was really dry. With some breaking in and setup, it becomes really good.');
-insert into review (name, amount_stars, description) values ('henry b.', '5star', 'i got this for christmas and it was amazing out of the box. no need for tentoning but good overal. want to put dnm 37 in it to make it rediulacly fast so yeah');
-insert into review (name, amount_stars, description) values ('S W.', '4star', 'Great skewb, and much better than the wingy v1 while still retaining its classic stability and feel, but its corner-cutting and fluidity is just not up-to-par with the gan. Also, the magnets on the strongest settings are still very weak in my opinion.');
-insert into review (name, amount_stars, description) values ('Tommy C.', '5star', 'This is definetly the best clock on the market. It is really smooth and the magnets help a lot.');
-insert into review (name, amount_stars, description) values ('Amy M.', '5star', 'I knew from other reviews and videos that this cube turned but wow, this is so much better then I expected. Solving it I had only 2 pops and they were easy to fix. It turns so smooth and doesnt even feel like it is gonna break. While it does have quite the price Im glad it is in my collection and can be used for patterns and fun patient solves.');
-insert into review (name, amount_stars, description) values ('Ethan D.', '4star', 'Definitely better than the Shengshou but didnt blow me away. If you want a gigaminx, this is the one to get, but dont expect too much.');
-insert into review (name, amount_stars, description) values ('Satya R.', '5star', 'Very good timer. Just make sure to use two pad mode.');
-insert into review (name, amount_stars, description) values ('magic_cuber', '3star', 'I don’t care for this lube too much, I don’t think it’s bad but I don’t think it’s that great either. Maybe there’s a specific lube combination that I’m not applying but I rather use other lubes like Silk to substitute it.');
-insert into review (name, amount_stars, description) values ('Ismail N.', '3star', 'Not a great sweater for the price. The logos are faded and the sweater pockets are small. The quality of the fabric could be better considering it’s 40 bucks.');
-insert into review (name, amount_stars, description) values ('Angela F.', '5star', 'Like everything else from the Cubicle, excellent!');
-insert into review (name, amount_stars, description) values ('Matt R.', '1star', 'Backpack zipper will split open. Had the backpack for 7 weeks. Seen light usage, and the zipper split open, from behind the zipper pull.');
+insert into review (nameR, amount_stars, description) values ('Jacob R.', '4star', 'I recently got into cubing and thought it would be neat to have a 2x2, so i bought this one. overall it pretty good. turns very fast, but is a little bit sandy out of the box, butafter adding lube it is perfectly fine. definately worth the price');
+insert into review (nameR, amount_stars, description) values ('that o.k.', '5star', 'This cube came out of the both very rough and weird, but when I lubed it with speed lube, it turned into the smoothest thing ever. The corner cutting can be improved by loosening it, and the magnets are easily adjustable (although I think the factory settings are strong and good enough).');
+insert into review (nameR, amount_stars, description) values ('Anonymous ', '5star', 'this is the best cube I ever felt!!!!!!!!!!!!');
+insert into review (nameR, amount_stars, description) values ('Jude', '5star', 'Great cube as it satisfied my expectations. Very smooth, fast and quiet');
+insert into review (nameR, amount_stars, description) values ('Colin H.', '5star', 'The RS3M is a very good cube. for 9$, it can still pack a good tensioning system and magnets, although they are pretty weak. Corner cutting is also very good. It is slow turning, even on the lowest setting, but if you put a fast lube in (which I don’t have), it will probably be faster. Either than that, the cube is great.');
+insert into review (nameR, amount_stars, description) values ('Alexandra L.', '3star', 'Its ok, but not super good. too messy and also breaks too much');
+insert into review (nameR, amount_stars, description) values ('Kin W.', '5star', 'The cube was super small so I can hold it well. The speed was great and I put dingatas and gravitas in the outers. Then put some dnm and outers and inners so it was balanced. The cube allowed me to get amazing times');
+insert into review (nameR, amount_stars, description) values ('Julian O.', '4star', 'Amazing cube for the price great for beginners and veteran’s alike');
+insert into review (nameR, amount_stars, description) values ('Wyatt B.', '5star', 'Big fan of the AoSu WRM 4x4 so wanted to give this a try. By far the best 5x5 I have tried to date.');
+insert into review (nameR, amount_stars, description) values ('HChristopher', '3star', 'I know its a budget cube, but from the other reviews, I kind of expected a little more on the quality side... But... you will get what you pay for on this one. Its rough out of the box, and not much better after lube. But I guess its fine if you just want a cheap, screw-around kind of 5x5.');
+insert into review (nameR, amount_stars, description) values ('ME', '1star', 'IT HARD TO TURN IT ALMOST POP BAD CUBE');
+insert into review (nameR, amount_stars, description) values ('Patricia A.', '5star', 'Grandson was very pleased!');
+insert into review (nameR, amount_stars, description) values ('Hagop S.', '2star', 'this Megaminx sucks all around dont get it');
+insert into review (nameR, amount_stars, description) values ('Ryan Y.', '2star', 'Ive tightened it up all the way but is still feels flimsy and the magnets are no good either DONT BUY THIS GET ANYTHING ELSE');
+insert into review (nameR, amount_stars, description) values ('Big G.', '4star', 'It had a lot of catches out of the box and it was really dry. With some breaking in and setup, it becomes really good.');
+insert into review (nameR, amount_stars, description) values ('henry b.', '5star', 'i got this for christmas and it was amazing out of the box. no need for tentoning but good overal. want to put dnm 37 in it to make it rediulacly fast so yeah');
+insert into review (nameR, amount_stars, description) values ('S W.', '4star', 'Great skewb, and much better than the wingy v1 while still retaining its classic stability and feel, but its corner-cutting and fluidity is just not up-to-par with the gan. Also, the magnets on the strongest settings are still very weak in my opinion.');
+insert into review (nameR, amount_stars, description) values ('Tommy C.', '5star', 'This is definetly the best clock on the market. It is really smooth and the magnets help a lot.');
+insert into review (nameR, amount_stars, description) values ('Amy M.', '5star', 'I knew from other reviews and videos that this cube turned but wow, this is so much better then I expected. Solving it I had only 2 pops and they were easy to fix. It turns so smooth and doesnt even feel like it is gonna break. While it does have quite the price Im glad it is in my collection and can be used for patterns and fun patient solves.');
+insert into review (nameR, amount_stars, description) values ('Ethan D.', '4star', 'Definitely better than the Shengshou but didnt blow me away. If you want a gigaminx, this is the one to get, but dont expect too much.');
+insert into review (nameR, amount_stars, description) values ('Satya R.', '5star', 'Very good timer. Just make sure to use two pad mode.');
+insert into review (nameR, amount_stars, description) values ('magic_cuber', '3star', 'I don’t care for this lube too much, I don’t think it’s bad but I don’t think it’s that great either. Maybe there’s a specific lube combination that I’m not applying but I rather use other lubes like Silk to substitute it.');
+insert into review (nameR, amount_stars, description) values ('Ismail N.', '3star', 'Not a great sweater for the price. The logos are faded and the sweater pockets are small. The quality of the fabric could be better considering it’s 40 bucks.');
+insert into review (nameR, amount_stars, description) values ('Angela F.', '5star', 'Like everything else from the Cubicle, excellent!');
+insert into review (nameR, amount_stars, description) values ('Matt R.', '1star', 'Backpack zipper will split open. Had the backpack for 7 weeks. Seen light usage, and the zipper split open, from behind the zipper pull.');
 
 
 -- TABLE company
@@ -150,7 +150,7 @@ insert into company (nameC) values ('YJ');
 insert into company (nameC) values ('Shengshou');
 insert into company (nameC) values ('QiYi');
 insert into company (nameC) values ('Yuxin');
-insert into company (nameC) values ('other');
+insert into company (nameC) values ('Other');
 
 -- TABLE size_chart
 insert into size_chart (name) values ('XS');
@@ -160,3 +160,7 @@ insert into size_chart (name) values ('L');
 insert into size_chart (name) values ('XL');
 insert into size_chart (name) values ('2XL');
 insert into size_chart (name) values ('3XL');
+
+-- TABLE personen
+insert into personen (name) values ('dgfscs');
+insert into personen (name) values ('fbsdfs');
